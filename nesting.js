@@ -50,7 +50,18 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater() {
+  var newEmployees = []
+  employees.forEach(obj => {
+    if (obj.firstName === 'Lorie') {
+      obj.department = 'HR'
+    }
+    if (obj.firstName !== 'Theo') {
+      newEmployees.push(obj)
+    }
+  })
+  return newEmployees
+}
 
 
 
@@ -68,7 +79,13 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(array) {
+  return array.filter((a, b) => array.indexOf(a) === b)
+};
+
+// Array.from(new Set(workplaceAccidents.map(a => a.id))).map(id => {
+//   return workplaceAccidents.find(a => a.id === id)
+// })
 
 
 
@@ -81,7 +98,7 @@ var cat = {
     {
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -97,8 +114,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+const grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -138,14 +155,20 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(accidents, atFaultForAccident) {
+  for (var i in myCar.accidents) {
+    if (myCar.accidents[i].atFaultForAccident === true) {
+      myCar.accidents[i].atFaultForAccident = false
+    }
+  }
+}
 
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 // Do not edit the code above.
 
 /*
@@ -157,6 +180,23 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper() {
+  const newNumsArr = numsArr.map((innerarr) => {
+    const newNew = innerarr.map((num) => {
+      if (num % 2 === 0) {
+        return 'even'
+      } else return 'odd'
+    }) 
+    return newNew
+  })
+  return newNumsArr
+}
 
-
+  // var numsArr = []
+  // for (let i = 0; i < numsArr.length; i++) {
+  //   // numsArr % 2 === 0
+  //   return 'even'
+  // }
+  // else (numsArr % 2 !== 0) {
+  //   return 'odd'
+  // }
